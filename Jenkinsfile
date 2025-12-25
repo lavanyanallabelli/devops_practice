@@ -6,7 +6,7 @@ pipeline {
                 checkout scm 
             }
         }
-        state('Install dependencies') {
+        stage('Install dependencies') {
             steps {
                 sh 'npm install'
             }
