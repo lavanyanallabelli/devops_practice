@@ -37,11 +37,11 @@ pipeline {
 
             }
         }
-        stage ('Push Image ') {
-            steps {
-                bat "Image readt to push to registry"
-            }
-        }
+        // stage ('Push Image ') {
+            // steps {
+                // bat "Image ready to push to registry"
+            // }
+        // }
         stage ('Build') {
             steps {
                 dir('code') {
