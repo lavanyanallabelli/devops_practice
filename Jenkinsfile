@@ -15,7 +15,7 @@ pipeline {
             steps {
                 dir('code') {
                 bat 'npm test || echo "no tests yet"'
-
+                }
             }
         }
         stage ('Build') {
