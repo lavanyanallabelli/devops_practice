@@ -8,18 +8,18 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Test'){
             steps {
-                sh 'npm test || echo "no tests yet"'
+                bat 'npm test || echo "no tests yet"'
 
             }
         }
         stage ('Build') {
             steps {
-                sh 'echo "Build completed"'
+                bat 'echo "Build completed"'
             }
         }
     }
