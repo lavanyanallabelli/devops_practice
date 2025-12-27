@@ -8,7 +8,9 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                bat 'npm install'
+                dir('code') {
+                    bat 'npm install'
+                }
             }
         }
         stage('Test'){
@@ -20,7 +22,9 @@ pipeline {
         }
         stage ('Build') {
             steps {
-                bat 'echo "Build completed"'
+                dir('code') {
+                    bat 'echo "Build completed"'
+                }
             }
         }
     }
