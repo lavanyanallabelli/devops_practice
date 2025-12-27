@@ -37,7 +37,7 @@ pipeline {
 
             }
         }
-        stage ('push image ') {
+        stage ('Push Image ') {
             steps {
                 bat "Image readt to push to registry"
             }
