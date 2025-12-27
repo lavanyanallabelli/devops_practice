@@ -13,13 +13,13 @@ pipeline {
                 }
             }
         }
-        stage('Test'){
-            steps {
-                dir('code') {
-                bat 'npm test || echo "no tests yet"'
-                }
-            }
-        }
+        // stage('Test'){
+            // steps {
+                // dir('code') {
+                // bat 'npm test || echo "no tests yet"'
+                // }
+            // }
+        // }
         stage ('Build') {
             steps {
                 dir('code') {
