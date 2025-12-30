@@ -29,7 +29,7 @@ pipeline {
         stage('Test'){
             steps {
                 bat """
-                docker run -d -p 3000:3000 --name node-app node-app:1.0
+                docker run -d -p 3001:3000 --name node-app node-app:1.0
                 timeout /t 5
                 curl -f http://localhost:3000/health || exit 1
                 docker rm -f node-app
