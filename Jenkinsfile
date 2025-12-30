@@ -37,9 +37,13 @@ pipeline {
 
             }
         }
-        stage ('Push Image ') {
+        stage ('Push Image') {
             steps {
-                bat 'echo "Image ready to push to registry"'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    bat 'docker login -u %DOCKER_USER% -p %DOCKER_PASS%'
+                    bat 'docker tag node-app:1.0 %DOCKER_USER%/node-app:1.0'
+                    bat 'docker push %DOCKER_USER%/node-app:1.0'
+                }
             }
         }
         stage ('Build') {
